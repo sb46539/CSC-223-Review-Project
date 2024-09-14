@@ -127,9 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CircleType.cpp" />
     <ClCompile Include="CSC 223 Review Project.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CircleType.h" />
     <ClInclude Include="PointType.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
