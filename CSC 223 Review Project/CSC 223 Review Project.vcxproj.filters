@@ -18,9 +18,6 @@
     <ClCompile Include="CSC 223 Review Project.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CircleType.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PointType.h">
