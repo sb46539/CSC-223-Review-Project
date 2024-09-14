@@ -12,23 +12,23 @@ public:
 	CircleType();
 	// Constructor w/ coordinates sent in
 	CircleType(T, T, T, T);
-	// Constructor w/ points sent in
-	CircleType(PointType<T>, PointType<T>);
 
-	// Sets coordinates for the radius point
+	// Sets coordinates for the radius point; SETTER
 	void setCenterPoint(T, T);
 
-	// Sets coordinates for the circumference point
+	// Sets coordinates for the circumference point; SETTER
 	void setCircumPoint(T, T);
 
-	// Sets coordinates for the radius point
-	PointType<T> getCenterPoint();
+	// returns the x,y coords of center point
+	void getCenterPoint(T& xC, T& yC);
 
-	// Sets coordinates for the circumference point
-	PointType<T> getCenterPoint();
+
+	// Returns the values for the x and y coordinates of the circumference point; GETTER
+	void getCircumPoint(T& xC, T& yC);
+
 
 	// displays the x,y coords of the center point
-	void printCenterPont();
+	void printCenterPoint();
 
 	// displays the x,y coords of the circumference point
 	void printCircumPoint();
@@ -60,5 +60,75 @@ template <class T>
 CircleType<T>::CircleType(T xCenter, T yCenter, T xCircum, T yCircum) : centerPoint(xCenter, yCenter),
 circumPoint(xCircum, yCircum) { }
 
+
 template <class T>
-CircleType<T>::CircleType(PointType<T> center, PointType<T> circum) : centerPoint(center), circumPoint(circum) { }
+void CircleType<T>::setCenterPoint(T xC, T yC)
+{
+	centerPoint.setX(xC);
+	centerPoint.setY(yC);
+}
+
+template <class T>
+void CircleType<T>::setCircumPoint(T xC, T yC)
+{
+	circumPoint.setX(xC);
+	circumPoint.setY(yC);
+}
+
+template <class T>
+void CircleType<T>::getCenterPoint(T& xC, T& yC)
+{
+	xC = centerPoint.getX();
+	yC = centerPoint.getY();
+}
+
+
+template <class T>
+void CircleType<T>::getCircumPoint(T& xC, T& yC)
+{
+	xC = circumPoint.getX();
+	yC = circumPoint.getY();
+}
+
+template <class T>
+void CircleType<T>::printCenterPoint()
+{
+	centerPoint.print();
+}
+template <class T>
+void CircleType<T>::printCircumPoint()
+{
+	circumPoint.print();
+}
+
+template <class T>
+double CircleType<T>::calcRadius()
+{
+	double radius;
+	return centerPoint - circumPoint;
+	return radius;
+}
+
+template <class T>
+double CircleType<T>::calcCircumference()
+{
+	return PI * 2 * calcRadius();
+}
+
+template <class T> 
+double CircleType<T>::calcArea()
+{
+	return PI * calcRadius() * calcRadius();
+}
+
+template <class T> 
+void CircleType<T>::print()
+{
+	cout << "Center point: ";
+	printCenterPoint();
+	cout << "Circ point: ";
+	printCircumPoint();
+	cout << "Radius: " << calcRadius() << endl;
+	cout << "Circumference: " << calcCircumference() << endl;
+	cout << "Area: " << calcArea() << endl;
+}
