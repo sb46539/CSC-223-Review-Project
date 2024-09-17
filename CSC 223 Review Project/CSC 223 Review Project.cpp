@@ -56,7 +56,7 @@ int main()
     cout << endl;
 
     cout << "Constructor with coordinates (Cylinder5):\n";
-    CylinderType<double> Cylinder5(5.1, 3.3, -4.6, 0, 3.7);
+    CylinderType<double> Cylinder5(5.2, 3.3, -4.6, 0, 3.7);
     cout << "Center Point:";
     Cylinder5.printCenterPoint();
     cout << "Circumference Point:";
