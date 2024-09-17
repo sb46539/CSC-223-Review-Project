@@ -2,42 +2,89 @@
 //
 
 #include <iostream>
-#include "CircleType.h"
+#include "CylinderType.h"
 
 using namespace std;
 
 int main()
 {
-	cout << "Default constructor testing " << endl;
-	CircleType<int> Cir1;
-	cout << "CenterPoint: ";
-	Cir1.printCenterPoint();
-	cout << "Circumference Point: ";
-	Cir1.printCircumPoint();
+    cout << "Test CylinderType with integers" << endl;
 
-	cout << "Test constructor w/ parameters" << endl;
-	CircleType<double> Cir2(5.5, 7.2, -6.4, 3.3);
-	cout << "CenterPoint: ";
-	Cir2.printCenterPoint();
-	cout << "Circumference Point: ";
-	Cir2.printCircumPoint();
+    cout << "Default constructor (Cylinder1):\n";
+    CylinderType<int> Cylinder1;
+    cout << "Center Point:";
+    Cylinder1.printCenterPoint();
+    cout << "Circumference Point:";
+    Cylinder1.printCircumPoint();
+    cout << "Height:" << Cylinder1.getHeight();
+    cout << endl;
 
-	cout << "Testint setCenterPoint, setCircumPoint" << endl;
-	Cir1.setCenterPoint(3, 7);
-	Cir1.setCircumPoint(6, -2);
-	cout << "CenterPoint: ";
-	Cir1.printCenterPoint();
-	cout << "Circumference Point: ";
-	Cir1.printCircumPoint();
+    cout << "Constructor with coordinates (Cylinder2):\n";
+    CylinderType<int> Cylinder2(5, 3, -4, 0, 8);
+    cout << "Center Point:";
+    Cylinder2.printCenterPoint();
+    cout << "Circumference Point:";
+    Cylinder2.printCircumPoint();
+    cout << "Height:" << Cylinder2.getHeight();
+    cout << endl;
 
-	cout << "Testing getCenterPoint, gertCircumPoint" << endl;
-	double x1, y1, x2, y2;
-	Cir2.getCenterPoint(x1, y1);
-	Cir2.getCircumPoint(x2, y2);
-	cout << "x1 = " << x1 << ", y1 = " << y1 << ", x2 = " << x2 << ", y2 = " << y2 << endl;
+    cout << "Test setCenterPoint, setCircumPoint, and setHeight with Cylinder1:";
+    Cylinder1.setCenterPoint(5, 3);
+    Cylinder1.setCircumPoint(0, 3);
+    Cylinder1.setHeight(4);
 
-	cout << "Testing operatiors: " << endl;
-	Cir2.print();
-	cout << endl;
+    cout << "Center Point:";
+    Cylinder1.printCenterPoint();
+    cout << "Circumference Point:";
+    Cylinder2.printCircumPoint();
+    cout << "Height:" << Cylinder2.getHeight();
+    cout << endl;
 
-};
+    cout << "Testing the print function for Cylinder2:" << endl;
+    Cylinder2.print();
+    cout << endl;
+
+    cout << endl << "Test CircleType with real numbers:" << endl;
+
+    cout << "Default constructor (Cylinder4):\n";
+    CylinderType<double> Cylinder4;
+    cout << "Center Point:";
+    Cylinder4.printCenterPoint();
+    cout << "Circumference Point:";
+    Cylinder4.printCircumPoint();
+    cout << "Height:" << Cylinder4.getHeight();
+    cout << endl;
+
+    cout << "Constructor with coordinates (Cylinder5):\n";
+    CylinderType<double> Cylinder5(5.1, 3.3, -4.6, 0, 3.7);
+    cout << "Center Point:";
+    Cylinder5.printCenterPoint();
+    cout << "Circumference Point:";
+    Cylinder5.printCircumPoint();
+    cout << "Height:" << Cylinder5.getHeight();
+    cout << endl;
+
+    cout << "Test setCenterPoint, setCircumPoint, and setHeight with Cylinder4:\n";
+    Cylinder4.setCenterPoint(5, 3);
+    Cylinder4.setCircumPoint(0, 3);
+    Cylinder4.setHeight(6);
+    cout << "Center Point:";
+    Cylinder4.printCenterPoint();
+    cout << "Circumference Point:";
+    Cylinder4.printCircumPoint();
+    cout << "Height:" << Cylinder4.getHeight();
+    cout << endl;
+
+    cout << "Radius from Cylinder4:" << Cylinder4.calcRadius() << endl;
+    cout << "Area from Cylinder4:" << Cylinder4.calcArea() << endl;
+    cout << "Circumference from Cylinder4:" << Cylinder4.calcCircumference() << endl;
+    cout << "Surface Area from Cylinder4:" << Cylinder4.calcSurfaceArea() << endl;
+    cout << "Volume from Cylinder4:" << Cylinder4.calcVolume() << endl;
+    cout << endl;
+
+    cout << "Testing the print function for Cylinder5:" << endl;
+    Cylinder5.print();
+    cout << endl;
+
+    return 0;
+}
